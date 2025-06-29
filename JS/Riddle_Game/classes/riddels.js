@@ -1,18 +1,20 @@
 import rl, { question } from "readline-sync";
+
 class Riddle{
-    contructor(id,name,taskDescription,correctAnswer){
+    constructor(id,name,taskDescription,correctAnswer){
         this.id = id,
         this.name=name 
-        this.taskDescription =this.taskDescription
-        this.correctAnswer=this.correctAnswer
+        this.taskDescription = taskDescription
+        this.correctAnswer= correctAnswer
     }
      ask (){
+        let answer = 0;
         console.log(this.taskDescription);
         while(answer != this.correctAnswer){
-        const answer = rl.question();            // should get a readline.question func
+        answer = rl.question("your answer:");            // should get a readline.question func
          }
        console.log("congradulation! riddle was solved");     
         }
     }
-}
+
 export default Riddle

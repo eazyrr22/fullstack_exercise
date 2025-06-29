@@ -1,18 +1,22 @@
 class Player{
-    constructor(name,times){
+    constructor(name){
         this.name = name;
         this.times = new Array();
     }
     recordTime(start,end){
-        
+        const totalTime = (end - start)/1000;
+        this.times.push(totalTime);
     }
     showStats(){
-        let sum;
-        this.times.map(item=>{
-            sum+=item
-            console.log(item)})
-            console.log(sum/this.times.length)
+        let sum =0;
+        for(let i =0;i<this.times.length;i++){
+            sum += this.times[i];
+        }
+        const average = sum/this.times.length;
+        const totalTime = sum;
+            return {totalTime,average} }
+           
 
     }
-}
+
 export default Player;
